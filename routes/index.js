@@ -7,7 +7,7 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
 
   menus.getMenus().then(results => {
-    res.render('index', { title: 'Restaurante Saboroso!', menus: results },);
+    res.render('index', { title: 'Restaurante Saboroso!', menus: results, isHome: true });
   });
 
 });
