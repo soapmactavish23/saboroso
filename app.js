@@ -9,7 +9,6 @@ var RedisStore = require('connect-redis')(session);
 var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 
-
 var app = express();
 
 // view engine setup
@@ -23,7 +22,7 @@ app.use(session({
   }),
   secret: 'p@ssw0rd',
   resave: true,
-  saveUninitialized: true,
+  saveUninitialized: true
 }));
 
 app.use(logger('dev'));
