@@ -22,7 +22,6 @@ module.exports = {
         return new Promise((resolve, reject) => {
 
             fields.photo = `images/${path.parse(files.photo.filepath).base}`
-            // console.log(files.photo.path);
 
             conn.query(`INSERT INTO tb_menus (title, description, price, photo) VALUES(?,?,?,?)`, [
                 fields.title,

@@ -4,12 +4,18 @@ var admin = require("../inc/admin");
 var menus = require("../inc/menus")
 var router = express.Router();
 
-router.use(function (req, res, next) {
-    if (['/login'].indexOf(req.url) === -1 && !req.session.user) {
-        res.redirect("/admin/login");
+router.use((req, res, next) => {
+
+    if (['/login'].indexOf(req.url) === -1 && (req.session && !req.session.user)) {
+
+        res.redirect('/admin/login');
+
     } else {
+
         next();
+
     }
+
 });
 
 router.use((req, res, next) => {

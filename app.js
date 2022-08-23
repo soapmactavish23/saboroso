@@ -22,9 +22,7 @@ app.use(function(req, res, next) {
     });
   
     form.parse(req, function(err, fields, files) {
-      
       req.fields = fields;
-      console.log(files);
       req.files = files;
   
       next();
