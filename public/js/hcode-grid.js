@@ -16,12 +16,12 @@ class HcodeGrid {
                 window.location.reload();
             },
             afterFormCreateError: (e) => {
-                
+
                 alert('Não foi possível enviar o formulário');
 
             },
             afterFormUpdateError: (e) => {
-                
+
                 alert('Não foi possível enviar o formulário');
 
             }
@@ -42,7 +42,7 @@ class HcodeGrid {
         this.formCreate = document.querySelector(this.options.formCreate);
 
         this.formCreate.save().then((json) => {
-            
+
             this.fireEvent('afterFormCreate');
 
         }).catch((error) => {
@@ -92,16 +92,9 @@ class HcodeGrid {
                 let data = this.getTrData(e);
 
                 for (let name in data) {
-                    let input = this.formUpdate.querySelector(`[name=${name}]`);
 
-                    switch (name) {
-                        case 'date':
-                            if (input) input.value = moment(data[name]).format('YYYY-MM-DD');
-                            break;
-                        default:
-                            if (input) input.value = data[name];
-                            break;
-                    }
+                    this.options.onUpdateLoad(this.formUpdate, name, data);
+
                 }
 
                 this.fireEvent('afterUpdateClick', [e]);
