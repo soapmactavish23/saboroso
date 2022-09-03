@@ -4,6 +4,7 @@ var admin = require("../inc/admin");
 var menus = require("../inc/menus");
 var contacts = require("../inc/contacts");
 var reservations = require("../inc/reservations");
+var emails = require("../inc/emails");
 var router = express.Router();
 var moment = require("moment");
 
@@ -90,8 +91,18 @@ router.delete('/contacts/:id', function (req, res, next) {
 
 router.get('/emails', function (req, res, next) {
 
-    res.render("admin/emails", admin.getParams(req));
+    emails.getEmails().then((data) => {
+        res.render("admin/emails", admin.getParams(req, { data }));
+    })
 
+});
+
+router.delete("/emails/:id", function (req, res, next) {
+    emails.delete(req.params.id).then(results => {
+        res.send(results);
+    }).catch(err => {
+        res.send(err);
+    });
 });
 
 router.get('/menus', function (req, res, next) {
