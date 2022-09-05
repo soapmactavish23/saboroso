@@ -17,7 +17,7 @@ class Pagination {
 
         return new Promise((resolve, reject) => {
             conn.query([this.query, "SELECT FOUND_ROWS() AS FOUND_ROWS"].join(";"), this.params, (err, results) => {
-                if(err) {
+                if (err) {
                     reject(err);
                 } else {
 
@@ -42,6 +42,54 @@ class Pagination {
 
     getTotalPages() {
         return this.totalPages;
+    }
+
+    getNavigation(params) {
+
+        let limitPageNav = 5;
+        let links = [];
+        let nrstart = 0;
+        let nrend = 0;
+
+        if (this.getTotalPages() < limitPageNav) {
+            limitPageNav = this.getTotalPages();
+        }
+
+        if ((this.getCurrentPage() - parseInt(limitPageNav / 2)) < 1){
+            nrstart = 1;
+            nrend = limitPageNav;
+        } else if((this.getCurrentPage() + parseInt(limitPageNav / 2)) > this.getTotalPages()){
+            nrstart = this.getTotalPages() - limitPageNav;
+            nrend = this.getTotalPages();
+        } else {
+            nrstart = this.getCurrentPage() - parseInt(limitPageNav / 2);
+            nrend = this.getCurrentPage() + parseInt(limitPageNav / 2);
+        }
+
+        for(let x = nrstart; x <= nrend; x++) {
+            links.push({
+                text: x,
+                href: `?${this.getQueryString(Object.assign({}, params, {page: x}))}`,
+                active: (x === this.getCurrentPage())
+            })
+        }
+
+        return links;
+
+    }
+
+    getQueryString(params) {
+
+        let queryString = [];
+
+        for(let name in params) {
+
+            queryString.push(`${name}=${params[name]}`);
+
+        }
+
+        return queryString.join("&");
+
     }
 
 }

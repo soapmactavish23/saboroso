@@ -16,7 +16,7 @@ module.exports = {
 
         return new Promise((resolve, reject) => {
 
-            if(fields.date.indexOf('/') > -1) {
+            if (fields.date.indexOf('/') > -1) {
                 let date = fields.date.split('/');
                 fields.date = `${date[2]}-${date[1]}-${date[0]}`;
             }
@@ -52,13 +52,34 @@ module.exports = {
         });
     },
 
-    getReservations(page) {
+    getReservations(req) {
+        console.log(req.query);
+        return new Promise((resolve, reject) => {
 
-        if(!page) page = 1;
+            let page = req.query.page;
+            let dtStart = req.query.start;
+            let dtEnd = req.query.dtEnd;
 
-        let pag = new Pagination("SELECT SQL_CALC_FOUND_ROWS * FROM tb_reservations ORDER BY name LIMIT ?, ?")
+            if (!page) page = 1;
 
-        return pag.getPage(page);
+            let params = [];
+
+            if (dtStart && dtEnd) params.push(dtStart, dtEnd);
+
+            let pag = new Pagination(
+                `SELECT SQL_CALC_FOUND_ROWS * FROM tb_reservations ${(dtStart && dtEnd) ? 'WHERE date BETWEEN ? AND ?' : ''} ORDER BY name LIMIT ?, ?`,
+                params
+            )
+
+            pag.getPage(page).then((data) => {
+                resolve({
+                    data,
+                    links: pag.getNavigation(req.query)
+                })
+            }).catch(err => {
+                reject(err);
+            }) 
+        });
     },
 
     delete(id) {
