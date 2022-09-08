@@ -35,35 +35,35 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## 📸 Screenshot
 <p float="left">
-    <img src="./prints/menus.png" width="300"/>
-    <img src="./prints/servicos.png" width="300"/>
+    <img src="./prints/menus.png" width="350"/>
+    <img src="./prints/servicos.png" width="350"/>
 </p>
 <p float="left">
-    <img src="./prints/contatos.png" width="300"/>
-    <img src="./prints/reservas.png" width="300"/>
+    <img src="./prints/contatos.png" width="350"/>
+    <img src="./prints/reservas.png" width="350"/>
 </p>
 <p float="left">
-<img src="./prints/footer.png" width="300"/>
-<img src="./prints/login.png" width="300"/>
+<img src="./prints/footer.png" width="350"/>
+<img src="./prints/login.png" width="350"/>
 </p>
 <p float="left">
-<img src="./prints/home-admin.png" width="300"/>
-<img src="./prints/gerenciamento-contatos.png" width="300"/>
+<img src="./prints/home-admin.png" width="350"/>
+<img src="./prints/gerenciamento-contatos.png" width="350"/>
 </p>
 <p float="left">
-<img src="./prints/gerenciamento-menus.png" width="300"/>
-<img src="./prints/gerenciamento-menus-form.png" width="300"/>
+<img src="./prints/gerenciamento-menus.png" width="350"/>
+<img src="./prints/gerenciamento-menus-form.png" width="350"/>
 </p>
 <p float="left">
-<img src="./prints/gerenciamento-reservas.png" width="300"/>
-<img src="./prints/gerenciamento-reservas-form.png" width="300"/>
+<img src="./prints/gerenciamento-reservas.png" width="350"/>
+<img src="./prints/gerenciamento-reservas-form.png" width="350"/>
 </p>
 <p float="left">
-<img src="./prints/gerenciamento-usuarios.png" width="300"/>
-<img src="./prints/gerenciamento-usuarios-form.png" width="300"/>
+<img src="./prints/gerenciamento-usuarios.png" width="350"/>
+<img src="./prints/gerenciamento-usuarios-form.png" width="350"/>
 </p>
 <p float="left">
-<img src="./prints/alterar-senha.png" width="300"/>
+<img src="./prints/alterar-senha.png" width="350"/>
 </p>
 
 ## Project setup
