@@ -1,6 +1,6 @@
-![WhatsApp Clone](/printscreens/home.png)
 
 <h4 align="center"> 
+    <img src="./prints/home.png" width="500"/><br>
 	🚧 Restaurante Saboroso 🚀 Concluido...  🚧
 </h4>
 
