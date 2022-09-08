@@ -35,21 +35,21 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## 📸 Screenshot
 
-<img src="./prints/menus.png" width="500"/>
-<img src="./prints/servicos.png" width="500"/>
-<img src="./prints/contatos.png" width="500"/>
-<img src="./prints/reservas.png" width="500"/>
-<img src="./prints/footer.png" width="500"/>
-<img src="./prints/login.png" width="500"/>
-<img src="./prints/home-admin.png" width="500"/>
-<img src="./prints/gerenciamento-contatos.png" width="500"/>
-<img src="./prints/gerenciamento-menus.png" width="500"/>
-<img src="./prints/gerenciamento-menus-form.png" width="500"/>
-<img src="./prints/gerenciamento-reservas.png" width="500"/>
-<img src="./prints/gerenciamento-reservas-form.png" width="500"/>
-<img src="./prints/gerenciamento-usuarios.png" width="500"/>
-<img src="./prints/gerenciamento-usuarios-form.png" width="500"/>
-<img src="./prints/alterar-senha.png" width="500"/>
+<img src="./prints/menus.png" width="250"/>
+<img src="./prints/servicos.png" width="250"/>
+<img src="./prints/contatos.png" width="250"/>
+<img src="./prints/reservas.png" width="250"/>
+<img src="./prints/footer.png" width="250"/>
+<img src="./prints/login.png" width="250"/>
+<img src="./prints/home-admin.png" width="250"/>
+<img src="./prints/gerenciamento-contatos.png" width="250"/>
+<img src="./prints/gerenciamento-menus.png" width="250"/>
+<img src="./prints/gerenciamento-menus-form.png" width="250"/>
+<img src="./prints/gerenciamento-reservas.png" width="250"/>
+<img src="./prints/gerenciamento-reservas-form.png" width="250"/>
+<img src="./prints/gerenciamento-usuarios.png" width="250"/>
+<img src="./prints/gerenciamento-usuarios-form.png" width="250"/>
+<img src="./prints/alterar-senha.png" width="250"/>
 
 ## Project setup
 ```
