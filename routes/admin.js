@@ -135,7 +135,7 @@ router.get('/reservations', function (req, res, next) {
 
     let start = (req.query.start) ? req.query.start : moment().subtract(1, 'year').format('YYYY-MM-DD');
     let end = (req.query.end) ? req.query.end : moment().format('YYYY-MM-DD');
-    console.log(req.query);
+
     reservations.getReservations(req).then((pag) => {
         res.render("admin/reservations", admin.getParams(req, {
             date: {
@@ -146,6 +146,18 @@ router.get('/reservations', function (req, res, next) {
             moment,
             links: pag.links
         }));
+    });
+
+});
+
+router.get('/reservations/chart', function(req, res, next) {
+
+    req.query.start = (req.query.start) ? req.query.start : moment().subtract(1, 'year').format('YYYY-MM-DD');
+    req.query.end = (req.query.end) ? req.query.end : moment().format('YYYY-MM-DD');
+    
+
+    reservations.chart(req).then((chartData) => {
+        res.send(chartData);
     });
 
 });

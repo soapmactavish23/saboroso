@@ -218,7 +218,9 @@
 
   <%- include("inc/footer.ejs") -%>
     <script src="/js/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+      integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/hcode-formsave.js"></script>
     <script src="/js/hcode-grid.js"></script>
     <script>
@@ -244,24 +246,30 @@
 
       let grafico = new Chart(document.querySelector("#chart").getContext("2d"), {
         type: 'line',
-        data: {
-          labels: ['Jan', 'Fev', 'Mar'],
+        data: {},
+        options: {
+          tooltips: {
+            mode: 'index',
+            intersect: false,
+          },
+
+        }
+      });
+
+      fetch(`/admin/reservations/chart${window.location.search}`).then((response) => response.json()).then(json => {
+        grafico.data = {
+          labels: json.months,
           datasets: [{
-            data: [3, 5, 6],
+            data: json.values,
             label: 'Reservas',
             backgroundColor: "rgb(54, 162, 235)",
             borderColor: "rbg(54, 162, 235)",
             fill: true,
             pointBackgroundColor: "#FFF"
           }]
-        },
-        options: {
-          tooltips: {
-            mode: 'index',
-            intersect: false,
-          },
-          
-        }
-      });
+        };
+
+        grafico.update();
+      })
 
     </script>
